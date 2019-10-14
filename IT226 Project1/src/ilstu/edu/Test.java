@@ -4,7 +4,8 @@ public class Test {
 
 	public static void main(String[] args) {
 		System.out.println("does it work?");
-		System.out.println("mbe?");
+		System.out.println("malsmdfbe?");
+		System.out.println("malsmdfbe?");
 		
 	}
 
