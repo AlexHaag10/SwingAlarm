@@ -37,8 +37,13 @@ public class Alarm
 	}
 	
 	public void addAlarm(Alarm alarm) {
+		if(arrayCount==9) {
+			System.out.println("alarm is full")
+		}
+		else {
 		alarmArray[arrayCount] = alarm;
-		arrayCount++;	
+		arrayCount++;
+		}
 	}
 	
 	public void setDate(int years, int month, int date) {
