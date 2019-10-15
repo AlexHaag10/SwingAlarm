@@ -13,9 +13,12 @@ public class Intro {
  	the alarm trigger must check the values and be able to trigger even if we set the alarm for 2:00, we turn the app on at 5:00 and the
  	alarm triggers right away. Not sure exactly how we want to tackle that.
  	
+ The checkAlarms tab has to read a CSV file to generate the alarms every time (so we can create multiple alarms at once), so I was thinking
+ 	maybe we use a REFRESH button since I don't think he's too picky. And I believe that the REFRESH button could just scan the CSV file every time,
+ 	so adding or deleting an alarm can be seen by refreshing.
  
- 
- 
+ Link to a good example of CSV parsing-
+ 	https://stackabuse.com/reading-and-writing-csvs-in-java/
  
  
  
