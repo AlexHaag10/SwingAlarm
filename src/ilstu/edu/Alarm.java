@@ -34,9 +34,18 @@ public class Alarm
 		alarmArray = new Alarm[10];
 	}
 	
-	public void addSnooze(){
-	
-		numberSnoozed++;
+	public void Snooze(){
+		int tempMin;
+		int tempHour;
+		if(this.getMinutes()>55) {
+			tempHour=this.getHours()+1;
+			tempMin=this.getMinutes()-55;
+			new Alarm(this.year,this.month,this.date, tempHour, tempMin, this.seconds);
+		}else {
+		tempMin=this.getMinutes()+5;
+		
+		new Alarm(this.year,this.month,this.date, this.hours, tempMin, this.seconds);
+		}
 	}
 	
 	public void addAlarm(Alarm alarm) {
