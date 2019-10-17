@@ -1,4 +1,7 @@
+package ilstu.edu;
+
 import java.util.Calendar;
+
 
 public class Alarm
 {
@@ -38,7 +41,7 @@ public class Alarm
 	
 	public void addAlarm(Alarm alarm) {
 		if(arrayCount==9) {
-			System.out.println("alarm is full")
+			System.out.println("alarm is full");
 		}
 		else {
 		alarmArray[arrayCount] = alarm;

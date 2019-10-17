@@ -69,6 +69,21 @@ public class UserInterface{
 				public void actionPerformed(ActionEvent e) {
 					//logic for the button, can parse from text areas using 
 					//   String text = textareaName.getText();
+					String number = month.getText();
+					int mon = Integer.parseInt(number);
+					String number2 = day.getText();
+					int da = Integer.parseInt(number2);
+					String number3 = year.getText();
+					int yea = Integer.parseInt(number3);
+					String number4 = hour.getText();
+					int hou = Integer.parseInt(number4);
+					String number5 = minute.getText();
+					int min = Integer.parseInt(number5);
+					String number6 = second.getText();
+					int sec = Integer.parseInt(number6);
+					
+					Alarm a= new Alarm(yea,mon,da,hou,min,sec);
+					System.out.print(a);
 				}
 			}
 				//adds the logic from the above class
