@@ -13,8 +13,8 @@ public class AlarmRunner
 	
 	int x = 1;
 	while (x!=0) {
-		Alarm alarm = new Alarm(2019, 3, 10, 11, 13, 40);
-		alarm.addAlarm(new Alarm(2019, 3, 10, 11, 13, 45));
+		Alarm alarm = new Alarm(2019, 3, 10, 11, 13);
+		alarm.addAlarm(new Alarm(2019, 3, 10, 11, 13 ));
 
 		
 		alarm.addAlarm(alarm);

@@ -29,6 +29,7 @@ public class Alarm
 		this.year = year;
 		this.hours = hours;
 		this.minutes = minutes;
+		this.optinalMessage= optinalMessage;
 		
 		
 		alarmArray = new Alarm[10];
@@ -134,7 +135,7 @@ public class Alarm
 	
 	@Override
 	public String toString(){
-		return "Date: " + getMonth() + "/" + getDate() + "/" + getYear() + "\t Time: " + getHours() + ":" + getMinutes() + ":"
-				+ getSeconds();
+		return "Date: " + getMonth() + "/" + getDate() + "/" + getYear() + "\t Time: " + getHours() + ":" + getMinutes() + "\t"
+				+ getMessage();
 	}
 }

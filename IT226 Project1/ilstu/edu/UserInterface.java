@@ -24,8 +24,8 @@ public class UserInterface{
 			addAlarmPanel.setLayout(new GridBagLayout());
 			GridBagConstraints gbc = new GridBagConstraints();
 		
-			JTextArea month, day, year, hour, minute, second;
-			String mo,d,yr,hr,min,sec;
+			JTextArea month, day, year, hour, minute, message;
+			String mo,d,yr,hr,min;
 			
 
 			
@@ -59,7 +59,10 @@ public class UserInterface{
 			gbc.gridy = 1;
 			addAlarmPanel.add(minute);
 			
-	
+			message = new JTextArea("Message",1,6);
+			gbc.gridx = 2;
+			gbc.gridy = 1;
+			addAlarmPanel.add(message);
 			
 			class addButtonActionListener implements ActionListener{
 				@Override
@@ -78,7 +81,7 @@ public class UserInterface{
 					int min = Integer.parseInt(number5);
 					
 					
-					Alarm a= new Alarm(yea,mon,da,hou,min);
+					Alarm a= new Alarm(yea,mon,da,hou,min,message.getText());
 					System.out.print(a);
 				}
 			}
