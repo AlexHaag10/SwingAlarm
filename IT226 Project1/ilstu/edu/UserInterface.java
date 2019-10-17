@@ -59,10 +59,7 @@ public class UserInterface{
 			gbc.gridy = 1;
 			addAlarmPanel.add(minute);
 			
-			second = new JTextArea("Second",1,6);
-			gbc.gridx = 2;
-			gbc.gridy = 1;
-			addAlarmPanel.add(second);
+	
 			
 			class addButtonActionListener implements ActionListener{
 				@Override
@@ -79,10 +76,9 @@ public class UserInterface{
 					int hou = Integer.parseInt(number4);
 					String number5 = minute.getText();
 					int min = Integer.parseInt(number5);
-					String number6 = second.getText();
-					int sec = Integer.parseInt(number6);
 					
-					Alarm a= new Alarm(yea,mon,da,hou,min,sec);
+					
+					Alarm a= new Alarm(yea,mon,da,hou,min);
 					System.out.print(a);
 				}
 			}

@@ -10,26 +10,26 @@ public class Alarm
 	private int year, month, date, hours, minutes,seconds, arrayCount = 0, numberSnoozed = 0;
 	
 	
-	public Alarm(int year,int month, int date, int hours, int minutes, int seconds) {
+	public Alarm(int year,int month, int date, int hours, int minutes) {
 		
 		this.date = date;
 		this.month = month;
 		this.year = year;
 		this.hours = hours;
 		this.minutes = minutes;
-		this.seconds = seconds;
+		
 		
 		alarmArray = new Alarm[10];
 	}
 	
-	public Alarm(int year,int month, int date, int hours, int minutes, int seconds, String optinalMessage) {
+	public Alarm(int year,int month, int date, int hours, int minutes, String optinalMessage) {
 		
 		this.date = date;
 		this.month = month;
 		this.year = year;
 		this.hours = hours;
 		this.minutes = minutes;
-		this.seconds = seconds;
+		
 		
 		alarmArray = new Alarm[10];
 	}
@@ -37,14 +37,14 @@ public class Alarm
 	public void Snooze(){
 		int tempMin;
 		int tempHour;
-		if(this.getMinutes()>55) {
+		if(this.getMinutes()==59) {
 			tempHour=this.getHours()+1;
-			tempMin=this.getMinutes()-55;
-			new Alarm(this.year,this.month,this.date, tempHour, tempMin, this.seconds);
+			tempMin=0;
+			new Alarm(this.year,this.month,this.date, tempHour, tempMin);
 		}else {
-		tempMin=this.getMinutes()+5;
+		tempMin=this.getMinutes()+1;
 		
-		new Alarm(this.year,this.month,this.date, this.hours, tempMin, this.seconds);
+		new Alarm(this.year,this.month,this.date, this.hours, tempMin);
 		}
 	}
 	
@@ -64,10 +64,10 @@ public class Alarm
 		this.date=date;
 	}
 	
-	public void setTime(int hours, int minutes, int seconds) {
+	public void setTime(int hours, int minutes) {
 		this.hours = hours;
 		this.minutes = minutes;
-		this.seconds = seconds;
+		
 	}
 	
 	public void setMessage(String message) {
@@ -81,8 +81,8 @@ public class Alarm
 						alarmArray[i].getMonth() == Calendar.getInstance().get(Calendar.MONTH) && 
 						alarmArray[i].getDate() == Calendar.getInstance().get(Calendar.DATE) && 
 						alarmArray[i].getHours() == Calendar.getInstance().get(Calendar.HOUR) &&
-						alarmArray[i].getMinutes() == Calendar.getInstance().get(Calendar.MINUTE) && 
-						alarmArray[i].getSeconds() == Calendar.getInstance().get(Calendar.SECOND))
+						alarmArray[i].getMinutes() == Calendar.getInstance().get(Calendar.MINUTE))
+						
 					
 				{
 					System.out.println("ALARM WENT OFF");
@@ -134,7 +134,7 @@ public class Alarm
 	
 	@Override
 	public String toString(){
-		return "Date: " + getYear() + "/" + getMonth() + "/" + getDate() + "\t Time: " + getHours() + ":" + getMinutes() + ":"
+		return "Date: " + getMonth() + "/" + getDate() + "/" + getYear() + "\t Time: " + getHours() + ":" + getMinutes() + ":"
 				+ getSeconds();
 	}
 }
